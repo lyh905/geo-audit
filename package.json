@@ -1,0 +1,29 @@
+{
+  "name": "geo-audit",
+  "version": "0.1.0",
+  "description": "Audit a site's readiness to be cited by AI search engines: llms.txt, AI crawler access, sitemap, structured data.",
+  "type": "module",
+  "bin": {
+    "geo-audit": "src/cli.mjs"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "geo",
+    "aeo",
+    "llms-txt",
+    "ai-search",
+    "seo",
+    "cli"
+  ],
+  "license": "MIT",
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE"
+  ]
+}
