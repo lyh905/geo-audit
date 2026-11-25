@@ -1,5 +1,9 @@
 # geo-audit
 
+[![test](https://github.com/lyh905/geo-audit/actions/workflows/test.yml/badge.svg)](https://github.com/lyh905/geo-audit/actions/workflows/test.yml)
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![node](https://img.shields.io/badge/node-%3E%3D20-brightgreen.svg)](package.json)
+
 **检查一个网站准备好被 AI 搜索引擎引用了吗。**
 
 一条命令，五项检测，输出一份带证据的体检报告：`llms.txt`、AI 爬虫准入、sitemap、结构化数据、页面元信息。

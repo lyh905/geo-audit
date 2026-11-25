@@ -1,0 +1,33 @@
+name: test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: ['20', '22', '24']
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Run the test suite
+        run: node --test
+
+      - name: Smoke test the CLI
+        # A green suite proves the parsers work; this proves the shipped entry
+        # point still starts, and still refuses to report on a site it cannot
+        # reach instead of printing five "absent" checks.
+        run: |
+          node src/cli.mjs --help > /dev/null
+          ! node src/cli.mjs not-a-real-domain.invalid
